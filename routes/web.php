@@ -12,8 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('pages.home');
 });
+
+
+Route::get('{slug}','PagesController@show');
+// Route::get('/', 'PagesController@index')->name('home');
+// Route::get('/home', 'PagesController@index')->name('home');
 
 
 Route::group(['prefix' => 'admin'], function () {
