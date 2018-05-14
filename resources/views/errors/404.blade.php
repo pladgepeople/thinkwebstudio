@@ -1,4 +1,4 @@
-@extends('layouts.404')
+@extends('pofo.master2')
 @section('title') Thinkweb Studio -  {{Route::currentRouteName()}} - {!! setting('site.title') !!} @endsection
 
 @push('meta')

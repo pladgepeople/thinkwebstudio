@@ -26,4 +26,9 @@ class User extends \TCG\Voyager\Models\User
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+     /* Mette in relazione tanti post con un utente tramite l'id */
+     public function posts(){
+        return $this->hasMany(Post::class,'id');
+      }
 }

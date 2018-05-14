@@ -1,35 +1,25 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}">
+<html class="no-js" lang="en">
+   
 
    @include('layouts.head')
 
-    <body class="combustion-yellow-skin">
 
-
-        <!-- Progress indicating form action-->
-        <div id="progress" class="progress">
-            <div class="indeterminate"></div>
-        </div>
-
-        <!-- Spinner-->
-        <div class="spinner-container valign-wrapper">
-            <div class="spinner-double-dot-out"></div>
-        </div>
-
-
-        <!-- Navigation bar-->
+    <body>
+        <!-- start navigation -->
         @include('layouts.navbar')
+        <!-- end navigation --> 
 
         
-        <!-- CONTENUTO PAGINA-->
-        @yield('content')
+            @yield('content')
+       
 
-       @include('layouts.footer')
+        <!-- start scroll to top -->
+        <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a>
+        <!-- end scroll to top  -->
 
 
-       @include('layouts.script')
-
+        <!-- javascript libraries -->
+        @include('layouts.script')
     </body>
-
-    
 </html>
