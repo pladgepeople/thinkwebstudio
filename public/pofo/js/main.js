@@ -1,3 +1,6 @@
+  
+  
+
 "use strict";
 var lastScroll = 0;
 
@@ -2065,9 +2068,10 @@ $(document).ready(function () {
         var instaFeedStyle1 = new Instafeed({
             target: 'instaFeed-style1',
             get: 'user',
-            userId: 5640046896,
+            userId: 5994553970,
+            // clientId: '5b379302cce24201a04ebf3a9c33fc11',
             limit: '8',
-            accessToken: '5640046896.1677ed0.f7cd85767e124a9f9f8d698cb33252a0',
+            accessToken: '5994553970.5b37930.e66c3221a3b545ffb9b967b39fc3289a',
             resolution: "low_resolution",
             error: {
                 template: '<div class="col-md-12 col-sm-12 col-xs-12"><span class=text-center>No Images Found</span></div>'
@@ -2081,9 +2085,9 @@ $(document).ready(function () {
         var instaFeedAside = new Instafeed({
             target: 'instaFeed-aside',
             get: 'user',
-            userId: 5640046896,
-            limit: '6',
-            accessToken: '5640046896.1677ed0.f7cd85767e124a9f9f8d698cb33252a0',
+            userId: 5994553970,
+            limit: '9',
+             accessToken: '5994553970.5b37930.e66c3221a3b545ffb9b967b39fc3289a',
             resolution: "low_resolution",
             after: function () {
                 equalizeHeight();
@@ -2100,7 +2104,8 @@ $(document).ready(function () {
         var instaFeedFooter = new Instafeed({
             target: 'instaFeed-footer',
             get: 'user',
-            userId: 5640046896,
+            // userId: 5640046896,
+            clientId: '5b379302cce24201a04ebf3a9c33fc11',
             limit: '6',
             accessToken: '5640046896.1677ed0.f7cd85767e124a9f9f8d698cb33252a0',
             resolution: "low_resolution",
@@ -2114,6 +2119,8 @@ $(document).ready(function () {
         });
         instaFeedFooter.run();
     }
+
+
     /*==============================================================
      instagramfeed end
      ==============================================================*/
@@ -2719,3 +2726,4 @@ $(window).load(function () {
 /* ===================================
  END Page Load
  ====================================== */
+

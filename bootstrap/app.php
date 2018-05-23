@@ -13,6 +13,7 @@
 
 $app = new Illuminate\Foundation\Application(
     realpath(__DIR__.'/../')
+    //realpath(__DIR__.'/../thinkwebstudio/') non funziona!!!!
 );
 
 /*

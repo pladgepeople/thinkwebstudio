@@ -26,7 +26,13 @@
 
             <div class="row">
                 <div class="col-md-8">
-                    <div class="panel panel-bordered">
+                    <div class="panel panel-bordered panel-info">
+                        <div class="panel-heading">
+                            <h3 class="panel-title"><i class="icon wb-clipboard"></i> Dati Anagrafici</h3>
+                            <div class="panel-actions">
+                                <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                            </div>
+                        </div>
                     {{-- <div class="panel"> --}}
                         @if (count($errors) > 0)
                             <div class="alert alert-danger">
@@ -59,7 +65,10 @@
                                 @endif
                                 <input type="password" class="form-control" id="password" name="password" value="" autocomplete="new-password">
                             </div>
-
+                            <div class="form-group">
+                                <label for="professione">professione</label>
+                                <input type="text" class="form-control" id="profession" name="profession" placeholder="professione" value="@if(isset($dataTypeContent->profession)){{ $dataTypeContent->profession }}@endif">
+                            </div>
                             @can('editRoles', $dataTypeContent)
                                 <div class="form-group">
                                     <label for="default_role">{{ __('voyager::profile.role_default') }}</label>
@@ -97,11 +106,66 @@
                                     @endforeach
                                 </select>
                             </div>
+
                         </div>
                     </div>
-                </div>
 
+                    <div class="panel panel-bordered panel-primary">
+                            <div class="panel-heading">
+                                <h3 class="panel-title"><i class="icon wb-image"></i> Biografia</h3>
+                                <div class="panel-actions">
+                                    <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                </div>
+                            </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                @php
+                                $dataTypeRows = $dataType->{(isset($dataTypeContent->id) ? 'editRows' : 'addRows' )};
+                                $row = $dataTypeRows->where('field', 'bio')->first();
+                            @endphp
+    
+                          
+                                {!! app('voyager')->formField($row, $dataType, $dataTypeContent) !!}
+                           
+                                {{-- <input type="textarea" class="form-control" id="bio" name="bio" placeholder="bio"
+                                    value="@if(isset($dataTypeContent->bio)){{ $dataTypeContent->bio }}@endif"> --}}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
                 <div class="col-md-4">
+                        <div class="panel panel panel-bordered panel-warning">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title"><i class="icon wb-clipboard"></i> Social</h3>
+                                    <div class="panel-actions">
+                                        <a class="panel-action voyager-angle-down" data-toggle="panel-collapse" aria-hidden="true"></a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <div class="form-group">
+                                        <label for="facebook">facebook</label>
+                                        <input type="text" class="form-control" id="facebook" name="facebook" placeholder="facebook"
+                                            value="@if(isset($dataTypeContent->facebook)){{ $dataTypeContent->facebook }}@endif">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="twitter">twitter</label>
+                                        <input type="text" class="form-control" id="twitter" name="twitter" placeholder="twitter"
+                                            value="@if(isset($dataTypeContent->twitter)){{ $dataTypeContent->twitter }}@endif">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="instagram">instagram</label>
+                                        <input type="text" class="form-control" id="instagram" name="instagram" placeholder="instagram"
+                                            value="@if(isset($dataTypeContent->instagram)){{ $dataTypeContent->instagram }}@endif">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="linkedin">linkedin</label>
+                                        <input type="text" class="form-control" id="linkedin" name="linkedin" placeholder="linkedin"
+                                            value="@if(isset($dataTypeContent->linkedin)){{ $dataTypeContent->linkedin }}@endif">
+                                    </div>
+                                </div>
+                            </div>
                     <div class="panel panel panel-bordered panel-warning">
                         <div class="panel-body">
                             <div class="form-group">
@@ -112,6 +176,7 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
             </div>
 

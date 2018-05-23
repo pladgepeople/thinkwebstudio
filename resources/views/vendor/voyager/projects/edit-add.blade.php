@@ -90,16 +90,14 @@
                             </div>
                         </div>
                         <div class="panel-body">
-                                <div class="form-group">
-                                        <label for="slug">titolo</label>
-                                       
-                                        <input type="text" class="form-control" id="name" name="name" placeholder="titolo" value="@if(isset($dataTypeContent->name)){{ $dataTypeContent->name }}@endif">
-                                    </div>
-                                    
-                                    <div class="form-group">
-                                        <label for="projects_category_id">link</label>
-                                        <input type="text" class="form-control" id="url" name="url" placeholder="url" value="@if(isset($dataTypeContent->url)){{ $dataTypeContent->url }}@endif">
-                                    </div>
+                            <div class="form-group">
+                                <label for="titolo">titolo</label>
+                                <input type="text" class="form-control" id="name" name="name" placeholder="titolo" value="@if(isset($dataTypeContent->name)){{ $dataTypeContent->name }}@endif">
+                            </div>
+                            <div class="form-group">
+                                <label for="projects_category_id">link</label>
+                                <input type="text" class="form-control" id="url" name="url" placeholder="url" value="@if(isset($dataTypeContent->url)){{ $dataTypeContent->url }}@endif">
+                            </div>
 
                                    
                             
@@ -202,7 +200,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="featured">In Evidenza  </label>
-                                <input type="checkbox" name="featured"@if(isset($dataTypeContent->featured) && $dataTypeContent->featured) checked="checked"@endif>
+                                <input type="checkbox" class="toggleswitch" name="featured"@if(isset($dataTypeContent->featured) && $dataTypeContent->featured) checked="checked"@endif>
                             </div>
                         </div>
                     </div>

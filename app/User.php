@@ -4,10 +4,12 @@ namespace App;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use TCG\Voyager\Traits\Resizable;
 
 class User extends \TCG\Voyager\Models\User
 {
     use Notifiable;
+    use Resizable;
 
     /**
      * The attributes that are mass assignable.

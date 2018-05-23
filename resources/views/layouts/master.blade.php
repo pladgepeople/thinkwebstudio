@@ -1,25 +1,39 @@
 <!doctype html>
-<html class="no-js" lang="en">
-   
+<html lang="{{ app()->getLocale() }}">
 
-   @include('layouts.head')
+    @include('layouts.head')
+    
 
 
-    <body>
-        <!-- start navigation -->
         @include('layouts.navbar')
-        <!-- end navigation --> 
 
-        
-            @yield('content')
        
 
+        @yield('content')
+
+        <!-- start footer -->
+       @include('layouts.footer')
+        <!-- end footer -->
+
+        
         <!-- start scroll to top -->
-        <a class="scroll-top-arrow" href="javascript:void(0);"><i class="ti-arrow-up"></i></a>
-        <!-- end scroll to top  -->
+        <a class="scroll-top-arrow" style="" href="javascript:void(0);"><i class="fa fa-chevron-up " style=""></i></a>
+        <!-- end scroll to top -->
+ <!-- preloader
+    ================================================== -->
+   
+    <div id="preloader">
+            <div id="loader">
+                    <div class="line-scale-pulse-out">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div> 
+            </div>
+        </div>
 
-
-        <!-- javascript libraries -->
-        @include('layouts.script')
+       @include('layouts.script')
     </body>
 </html>

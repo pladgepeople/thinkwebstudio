@@ -7,7 +7,8 @@
     var stepA = 0;
     var stepB = 0;
     var stepC = 0;
-    var bgColor = '#ffd740';
+    // var bgColor = '#ffd740';
+    var bgColor = '#40b2ff';
     var bloom = 14;
     var drawBlur = 0.2;
     var redFactor = 69;
@@ -188,7 +189,8 @@
         this.position = new Vector2();
         this.direction = new Vector2();
         this.radius = 40;
-        this.color = '#fe5a64';
+        // this.color = '#fe5a64';40b2ff
+        this.color = '#40b2ff';
         this.distance = 700;
     }
 
